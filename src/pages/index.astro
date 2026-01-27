@@ -10,13 +10,16 @@ const services = [
   { title: "Operations", desc: "Workflows, templates, tooling, enablement." },
 ];
 
+const base = import.meta.env.BASE_URL;
+
 const links = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: `${base}about` },
+  { label: "Services", href: `${base}services` },
+  { label: "Contact", href: `${base}contact` },
 ];
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -31,7 +34,8 @@ const links = [
   <body>
     <main class="wrap">
       <header class="nav">
-        <a class="logo" href="/">{brand}</a>
+        <a class="logo" href={base}>{brand}</a>
+
         <nav class="links">
           {links.map((l) => (
             <a href={l.href}>{l.label}</a>
@@ -45,8 +49,8 @@ const links = [
         <p class="subhead">{subhead}</p>
 
         <div class="cta">
-          <a class="button primary" href="/contact">Start a project</a>
-          <a class="button ghost" href="/services">View services</a>
+          <a class="button primary" href={`${base}contact`}>Start a project</a>
+          <a class="button ghost" href={`${base}services`}>View services</a>
         </div>
       </section>
 
@@ -71,7 +75,8 @@ const links = [
     margin: 0;
     background: #0b0b0d;
     color: rgba(255, 255, 255, 0.92);
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Helvetica, Arial;
   }
 
   .wrap {
@@ -102,7 +107,7 @@ const links = [
   }
 
   .links a {
-    color: rgba(255, 255, 255, 0.70);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 14px;
     padding-bottom: 2px;
@@ -116,7 +121,7 @@ const links = [
 
   .hero {
     padding: 46px 0 26px;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .kicker {
@@ -174,7 +179,7 @@ const links = [
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
     padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 18px;
   }
 
@@ -199,7 +204,7 @@ const links = [
   .footer {
     margin-top: 52px;
     padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.56);
     font-size: 13px;
   }
