@@ -1,15 +1,23 @@
 ---
-const brand = Astro.props.brand ?? "Ramble & Co.";
-const title = Astro.props.title ?? brand;
-const description =
-  Astro.props.description ??
-  "Ramble & Co. — a small studio offering strategy, design, and operational clarity for modern teams.";
+type NavLink = { label: string; href: string };
 
-const links = Astro.props.links ?? [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
-];
+type LayoutProps = {
+  brand?: string;
+  title?: string;
+  description?: string;
+  links?: NavLink[];
+};
+
+const {
+  brand = "Ramble & Co.",
+  title = brand,
+  description = "Ramble & Co. — a small studio offering strategy, design, and operational clarity for modern teams.",
+  links = [
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Contact", href: "/contact" },
+  ],
+} = Astro.props as LayoutProps;
 ---
 
 <!doctype html>
@@ -29,7 +37,7 @@ const links = Astro.props.links ?? [
         <a class="logo" href="/">{brand}</a>
 
         <nav class="links" aria-label="Primary">
-          {links.map((l) => (
+          {links.map((l: NavLink) => (
             <a href={l.href}>{l.label}</a>
           ))}
         </nav>
@@ -69,7 +77,8 @@ const links = Astro.props.links ?? [
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Helvetica, Arial;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -183,7 +192,7 @@ const links = Astro.props.links ?? [
     margin-top: 52px;
     padding-top: 18px;
     border-top: 1px solid var(--line);
-    color: var(--muted-ink-2);
-    font-size: 13px;
+    color: var(--accent);
+    font-size: 11px;
   }
 </style>
