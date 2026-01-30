@@ -3,8 +3,6 @@ import Layout from "../layouts/Layout.astro";
 
 const brand = "Ramble & Co.";
 const tagline = "Designing workflows for people.";
-const subhead =
-  "A small studio helping teams of people simplify messy systems, align stakeholders, and ship with confidence.";
 
 const services = [
   { title: "Strategy", desc: "Problem framing, roadmaps, decision support." },
@@ -17,7 +15,20 @@ const services = [
   <section class="section hero">
     <p class="kicker">Creative Consulting</p>
     <h1>{tagline}</h1>
-    <p class="subhead">{subhead}</p>
+
+    <div class="subhead">
+      <p>
+        I help teams untangle complex work—aligning strategy, design, and operations
+        into practical systems that actually get used.
+      </p>
+
+      <p>
+        My background is in visual design, but my work lives at the intersection of
+        how teams think, decide, and execute. From early problem framing to scalable
+        workflows and enablement, I design the infrastructure that helps teams move
+        faster with less friction.
+      </p>
+    </div>
 
     <div class="cta">
       <a class="button primary" href="/contact">Start a project</a>
@@ -54,6 +65,14 @@ const services = [
     font-size: 18px;
     line-height: 1.65;
     color: rgba(188, 105, 8, 1);
+  }
+
+  .subhead p {
+    margin: 0;
+  }
+
+  .subhead p + p {
+    margin-top: 1rem;
   }
 
   .grid {
