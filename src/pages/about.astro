@@ -16,8 +16,17 @@ const brand = "Ramble & Co.";
         </p>
 
         <p>
-          Led by Mary Schafrath, the work blends a foundation in visual design with deep experience in
-          UX research operations, systems thinking, and cross-functional enablement. The focus is not just
+          Led by
+          <a
+            href="https://www.linkedin.com/in/mary-schafrath-nyc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-link"
+          >
+            Mary Schafrath
+          </a>,
+          the work blends a foundation in visual design with deep experience in
+          UX design operations, systems thinking, and cross-functional enablement. The focus is not just
           on what teams build—but on the structures that support good decisions along the way.
         </p>
 
@@ -29,7 +38,11 @@ const brand = "Ramble & Co.";
 
         <!-- Resume download -->
         <p class="resume">
-          <a href="/mary-schafrath-resume-2026.pdf" download>
+          <a
+            href="https://www.dropbox.com/scl/fi/cojac27pvnxxmo4ywgyux/mary-schafrath-resume-2026.pdf?rlkey=4yppbyjfw67knipt1m0isnx2y&dl=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Download resume
           </a>
         </p>
@@ -64,6 +77,18 @@ const brand = "Ramble & Co.";
   .copy p {
     line-height: 1.75;
     font-size: 16px;
+    color: var(--accent);
+  }
+
+  /* Inline link (LinkedIn name) */
+  .inline-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: inherit;
+  }
+
+  .inline-link:visited {
     color: var(--accent);
   }
 
