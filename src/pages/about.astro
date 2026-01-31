@@ -5,31 +5,115 @@ const brand = "Ramble & Co.";
 ---
 
 <Layout title={`About — ${brand}`} brand={brand}>
-  <section class="section content">
-    <h1>About</h1>
+  <section class="section about">
+    <div class="about-grid">
+      <div class="copy">
+        <h1>About</h1>
 
-    <p>
-      Ramble & Co. is a creative consulting practice focused on designing workflows that help teams think clearly and execute with confidence.
-    </p>
+        <p>
+          Ramble & Co. is a creative consulting practice focused on designing workflows that help teams
+          think clearly and execute with confidence.
+        </p>
 
-    <p>
-      Led by Mary Schafrath, the work blends a foundation in visual design with deep experience in UX research operations, systems thinking, and cross-functional enablement. The focus is not just on what teams build—but on the structures that support good decisions along the way.
-    </p>
+        <p>
+          Led by Mary Schafrath, the work blends a foundation in visual design with deep experience in
+          UX research operations, systems thinking, and cross-functional enablement. The focus is not just
+          on what teams build—but on the structures that support good decisions along the way.
+        </p>
 
-    <p>
-      Typical engagements include early problem framing, UX and content structure, and operational tooling such as workflows, templates, and internal systems. The goal is simple: reduce noise, create alignment, and make progress feel calmer.
-    </p>
+        <p>
+          Typical engagements include early problem framing, UX and content structure, and operational
+          tooling such as workflows, templates, and internal systems. The goal is simple: reduce noise,
+          create alignment, and make progress feel calmer.
+        </p>
+
+        <!-- Resume download -->
+        <p class="resume">
+          <a href="/mary-schafrath-resume-2026.pdf" download>
+            Download resume
+          </a>
+        </p>
+      </div>
+
+      <figure class="portrait" aria-label="Portrait of Mary Schafrath">
+        <img
+          src="/profile-image-mschafrath.png"
+          alt="Mary Schafrath"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
   </section>
 </Layout>
 
 <style>
-  .content {
+  /* --- Grid --- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 30px;
+    align-items: start;
+  }
+
+  .copy {
     max-width: 760px;
   }
 
-  p {
+  /* Copy styling */
+  .copy p {
     line-height: 1.75;
     font-size: 16px;
-    color: rgba(188, 105, 8, 1);
+    color: var(--accent);
+  }
+
+  /* Resume link */
+  .resume {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .resume a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(205, 117, 9, 0.6);
+    padding-bottom: 2px;
+  }
+
+  .resume a:visited {
+    color: var(--accent);
+  }
+
+  .resume a:hover {
+    border-bottom-color: rgba(205, 117, 9, 1);
+  }
+
+  /* --- Portrait --- */
+  .portrait {
+    margin: 0;
+    padding-top: 28px;
+  }
+
+  .portrait img {
+    width: 240px;
+    height: auto;
+    display: block;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 860px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .portrait {
+      padding-top: 18px;
+    }
+
+    .portrait img {
+      width: 220px;
+    }
   }
 </style>
