@@ -55,6 +55,17 @@ const brand = "Ramble & Co.";
           loading="lazy"
           decoding="async"
         />
+        <figcaption class="photo-credit">
+          Photo:
+          <a
+            href="https://www.instagram.com/voxavila/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="photo-credit-link"
+          >
+            David Avila
+          </a>
+        </figcaption>
       </figure>
     </div>
   </section>
@@ -80,16 +91,21 @@ const brand = "Ramble & Co.";
     color: var(--accent);
   }
 
-  /* Inline link (LinkedIn name) */
+  /* Inline link (LinkedIn name) — match "Download resume" underline thickness */
   .inline-link {
     color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration: none;
     font-weight: inherit;
+    border-bottom: 1px solid rgba(205, 117, 9, 0.6);
+    padding-bottom: 2px;
   }
 
   .inline-link:visited {
     color: var(--accent);
+  }
+
+  .inline-link:hover {
+    border-bottom-color: rgba(205, 117, 9, 1);
   }
 
   /* Resume link */
@@ -124,6 +140,28 @@ const brand = "Ramble & Co.";
     width: 240px;
     height: auto;
     display: block;
+  }
+
+  /* Photo credit — match footer style, link underline matches "Download resume" */
+  .photo-credit {
+    margin-top: 10px;
+    font-size: 14px; /* footer-sized */
+    color: var(--accent);
+  }
+
+  .photo-credit-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(205, 117, 9, 0.6);
+    padding-bottom: 2px;
+  }
+
+  .photo-credit-link:visited {
+    color: var(--accent);
+  }
+
+  .photo-credit-link:hover {
+    border-bottom-color: rgba(205, 117, 9, 1);
   }
 
   /* --- Mobile --- */
