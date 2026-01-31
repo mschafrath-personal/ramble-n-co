@@ -54,7 +54,7 @@ const {
 
 <style>
   :global(:root) {
-    /* Palette (from your Figma) */
+    /* Palette */
     --bg: #cbd6c4;
     --ink: #025347;
     --ink-2: #007d6a;
@@ -70,7 +70,7 @@ const {
     --wrap-x: 20px;
     --wrap-top: 28px;
     --wrap-bottom: 64px;
-    --btn-radius: 4px; /* <- make buttons more square here */
+    --btn-radius: 4px;
   }
 
   :global(body) {
@@ -188,11 +188,18 @@ const {
     background: rgba(205, 117, 9, 0.12);
   }
 
+  /* Footer */
   .footer {
     margin-top: 52px;
     padding-top: 18px;
     border-top: 1px solid var(--line);
-    color: var(--accent);
-    font-size: 11px;
+  }
+
+  /* IMPORTANT: override global p styles inside footer */
+  .footer p {
+    margin: 0;
+    color: var(--accent); /* #CD7509 */
+    font-size: 11px;       /* a couple points smaller */
+    line-height: 1.4;
   }
 </style>

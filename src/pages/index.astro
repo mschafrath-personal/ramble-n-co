@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 const brand = "Ramble & Co.";
-const tagline = "Designing workflows for people.";
+const tagline = "Designing workflows for creative people.";
 
 const services = [
   { title: "Strategy", desc: "Problem framing, roadmaps, decision support." },
@@ -13,20 +13,16 @@ const services = [
 
 <Layout title={brand} brand={brand}>
   <section class="section hero">
-    <p class="kicker">Mary Schafrath: Creative Consulting</p>
+    <p class="kicker">Creative Consulting</p>
     <h1>{tagline}</h1>
 
     <div class="subhead">
       <p>
-        I help teams untangle complex work, aligning strategy, design, and operations
-        into practical systems that actually get used.
+        Hi, I’m Mary — a creative consultant who helps teams untangle complex work by aligning strategy, design, and operations into practical workflow systems that actually get used.
       </p>
 
       <p>
-        My background is in visual design, but my work lives at the intersection of
-        how teams think, decide, and execute. From early problem framing to scalable
-        workflows and enablement, I design the infrastructure that helps teams move
-        faster with less friction.
+        My background is in visual design, but my work lives at the intersection of how teams think, decide, and execute. From early problem framing to scalable workflows and enablement, I design the infrastructure that helps creative teams move faster with less friction.
       </p>
     </div>
 
@@ -56,7 +52,7 @@ const services = [
     font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(188, 105, 8, 1);
+    color: #cd7509;
   }
 
   .subhead {
@@ -64,11 +60,12 @@ const services = [
     margin: 0 0 22px;
     font-size: 18px;
     line-height: 1.65;
-    color: rgba(188, 105, 8, 1);
   }
 
+  /* Override Layout's :global(p) color */
   .subhead p {
     margin: 0;
+    color: #cd7509;
   }
 
   .subhead p + p {
